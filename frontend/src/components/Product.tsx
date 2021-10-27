@@ -42,6 +42,11 @@ export const Product = ({ data }: IProduct) => {
   );
 };
 
+const StyledCard = styled(Card)`
+& > .card-text {
+ padding: 1rem 0; 
+}
+`
 const StyledLink = styled.a``;
 
 const RatingText = styled.div`
