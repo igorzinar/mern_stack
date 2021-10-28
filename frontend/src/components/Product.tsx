@@ -1,5 +1,6 @@
 import React from "react";
-import { Card, CardImg } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Card } from "react-bootstrap";
 import styled from "styled-components";
 import { Rating } from "./Rating";
 
@@ -21,11 +22,11 @@ interface IProduct {
 export const Product = ({ data }: IProduct) => {
   return (
     <Card className="my-3 p-3 rounded">
-      <StyledLink href={`/product/${data._id}`}>
-        <CardImg src={data.image} variant="top" />
+      <StyledLink to={`/product/${data._id}`}>
+        <Card.Img src={data.image} variant="top" />
       </StyledLink>
       <Card.Body>
-        <StyledLink href={`/product/${data._id}`}>
+        <StyledLink to={`/product/${data._id}`}>
           <Card.Title as="div">
             <strong>{data.name}</strong>
           </Card.Title>
@@ -43,11 +44,14 @@ export const Product = ({ data }: IProduct) => {
 };
 
 const StyledCard = styled(Card)`
-& > .card-text {
- padding: 1rem 0; 
-}
-`
-const StyledLink = styled.a``;
+  & > .card-text {
+    padding: 1rem 0;
+  }
+`;
+export const StyledLink = styled(Link)`
+text-decoration: none;
+  color: inherit;
+`;
 
 const RatingText = styled.div`
   margin: 15px 0;

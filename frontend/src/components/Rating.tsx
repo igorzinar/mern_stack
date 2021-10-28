@@ -11,7 +11,6 @@ interface IProps {
   children?: ReactNode;
 }
 export const Rating = ({ value, text, color = "#f8e825" }: IProps) => {
-  console.log(value);
   return (
     <StyledDiv className="rating">
       <StyledSpan>
@@ -40,7 +39,7 @@ export const Rating = ({ value, text, color = "#f8e825" }: IProps) => {
       </StyledSpan>
       <StyledSpan>
         <FAIcon
-            color={color}
+          color={color}
           icon={
             value >= 4 ? faStar : value >= 3.5 ? faStarHalfAlt : faStarEmpty
           }
@@ -60,7 +59,7 @@ export const Rating = ({ value, text, color = "#f8e825" }: IProps) => {
 };
 
 const StyledDiv = styled.div`
-margin: 8px;
+  margin: 8px;
 `;
 
 const StyledSpan = styled.span``;
