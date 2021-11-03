@@ -4,7 +4,7 @@ import { Card } from "react-bootstrap";
 import styled from "styled-components";
 import { Rating } from "./Rating";
 
-interface IProduct {
+export interface IProduct {
   data: {
     _id: number;
     name: string;
@@ -22,11 +22,11 @@ interface IProduct {
 export const Product = ({ data }: IProduct) => {
   return (
     <Card className="my-3 p-3 rounded">
-      <StyledLink to={`/product/${data._id}`}>
+      <StyledLink to={`/products/${data._id}`}>
         <Card.Img src={data.image} variant="top" />
       </StyledLink>
       <Card.Body>
-        <StyledLink to={`/product/${data._id}`}>
+        <StyledLink to={`/products/${data._id}`}>
           <Card.Title as="div">
             <strong>{data.name}</strong>
           </Card.Title>

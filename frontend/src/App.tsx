@@ -25,7 +25,7 @@ export const App = () => {
         <PageContent>
           <Container>
             <Route path="/" component={HomeScreen} exact />
-            <Route path="/product/:id" component={ProductScreen} />
+            <Route path="/products/:id" component={ProductScreen} />
           </Container>
         </PageContent>
         <Footer />
